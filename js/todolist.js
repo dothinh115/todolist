@@ -52,12 +52,8 @@ export class Todo {
         }, "");
     }
     //check all task
-    checkAllTasks () {
-        this.arrTodo.map(item => item.done = true);
-    }
-
-    unCheckAllTasks () {
-        this.arrTodo.map(item => item.done = false);
+    checkAllTasks (bool) {
+        this.arrTodo.map(item => item.done = bool);
     }
 
     //sort by name

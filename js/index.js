@@ -53,7 +53,7 @@ document.querySelector("#addItem").addEventListener("submit", e => {
 });
 
 document.querySelector("#one").addEventListener("click", () => {
-    todo.checkAllTasks();
+    todo.checkAllTasks(true);
     todo.addLocalStorage();
     renderLayout(todo.arrTodo);
 });
@@ -69,6 +69,6 @@ document.querySelector("#three").addEventListener("click", () => {
 });
 
 document.querySelector("#all").addEventListener("click", () => {
-    todo.unCheckAllTasks();
+    todo.checkAllTasks(false);
     renderLayout(todo.arrTodo);
 });
