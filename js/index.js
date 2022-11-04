@@ -34,6 +34,13 @@ window.doneTask = id => {
     renderLayout(todo.arrTodo);
 }
 
+//Go up
+window.goUp = id => {
+    todo.goUp(id);
+    todo.addLocalStorage();
+    renderLayout(todo.arrTodo);
+}
+
 let addItem = () => {
     let newTodo = document.querySelector("#newTask");
     if(newTodo.value.trim() !== "") {
@@ -69,6 +76,6 @@ document.querySelector("#three").addEventListener("click", () => {
 });
 
 document.querySelector("#all").addEventListener("click", () => {
-    todo.checkAllTasks(false);
+    todo.sortByTime();
     renderLayout(todo.arrTodo);
 });
