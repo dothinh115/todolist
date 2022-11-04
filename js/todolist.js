@@ -50,7 +50,7 @@ export class Todo {
     goUp (id) {
         let result = this.arrTodo.findIndex(item => item.id == id);
         let after = this.arrTodo[result];
-        let before = this.arrTodo[result -1];
+        let before = this.arrTodo[result - 1];
         this.arrTodo[result] = before;
         this.arrTodo[result - 1] = after;
     }
@@ -59,7 +59,7 @@ export class Todo {
     renderTask (doneYet) {
         return this.arrTodo.filter(item => item.done === doneYet).reduce((html, item, index) => {
             html += `
-                <li>${item.value} <span><i class="fa-solid fa-trash" onclick="delTask('${item.id}')"></i> <i class="fa-solid fa-${doneYet ? 'xmark-circle' : 'check-circle'}" onclick="doneTask('${item.id}')"></i> ${index != 0 ? `<i class="fa-solid fa-arrow-up" onclick="goUp('${item.id}')"></i>` : ''}</span></li>
+                <li>${item.value} <span> ${index != 0 ? `<i class="fa-solid fa-arrow-up" onclick="goUp('${item.id}')"></i>` : ''} <i class="fa-solid fa-trash" onclick="delTask('${item.id}')"></i> <i class="fa-solid fa-${doneYet ? 'xmark-circle' : 'check-circle'}" onclick="doneTask('${item.id}')"></i></span></li>
             `;
             return html;
         }, "");
