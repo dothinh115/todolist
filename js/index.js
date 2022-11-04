@@ -41,6 +41,13 @@ window.goUp = id => {
     renderLayout(todo.arrTodo);
 }
 
+//Go down
+window.goDown = id => {
+    todo.goDown(id);
+    todo.addLocalStorage();
+    renderLayout(todo.arrTodo);
+}
+
 let addItem = () => {
     let newTodo = document.querySelector("#newTask");
     if(newTodo.value.trim() !== "") {
